@@ -1,0 +1,12 @@
+<div class="container text-center" style="margin-top:70px">
+  <h1>Welcome to the longest word-game!</h1>
+  <h2>Here is your grid:</h2>
+  <h2><%= @grid.join(' ') %></h2>
+  <form action="/score">
+    <label for="question">What's your best shot?</label>
+    <input type="text" id="word" name="word" placeholder="Type a word including the letters above">
+    <input type="hidden" name="grid" value="<%= @grid %>">
+    <input type="hidden" name="start_time" value="<%= Time.now.to_i %>">
+  <input type="submit" value="Submit your word!">
+</form>
+</div>
